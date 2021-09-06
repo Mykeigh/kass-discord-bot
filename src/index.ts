@@ -36,8 +36,8 @@ interface CustomClient extends Client {
 }
 
 (async () => {
-  (await import('dotenv')).config()
-  const token = process.env.TOKEN
+  (await import("dotenv")).config();
+  const token = process.env.TOKEN;
   // Create a new client instance
   const client = new Client({
     intents: [Intents.FLAGS.GUILDS],
@@ -49,8 +49,6 @@ interface CustomClient extends Client {
   });
 
   client.on("interactionCreate", async (interaction) => {
-    console.log("A command was initiated");
-
     if (interaction.isSelectMenu()) {
     }
 
@@ -60,6 +58,7 @@ interface CustomClient extends Client {
     // console.log(command);
 
     if (interaction.isCommand()) {
+      console.log("A command was initiated");
       const command = client.commands.get(interaction.commandName);
 
       if (!command) return;
@@ -79,8 +78,7 @@ interface CustomClient extends Client {
 
     if (interaction.isSelectMenu()) {
       const selectInteraction = client.selectMenus.get(interaction.customId);
-      console.log(interaction.customId);
-      
+
       if (!selectInteraction) return;
 
       try {
@@ -125,8 +123,7 @@ interface CustomClient extends Client {
       throw new Error(
         "A select interaction file was found, but it's customId was not set."
       );
-      console.log(selectInteraction);
-      
+    console.log(selectInteraction);
 
     client.selectMenus.set(selectInteraction.data.customId, selectInteraction);
   }

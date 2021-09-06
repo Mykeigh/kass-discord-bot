@@ -70,11 +70,11 @@ export async function GetSomeBitches(
       (anchorsSpans) => anchorsSpans.map((anchorSpan) => anchorSpan.textContent)
     );
 
-    console.log(
-      `Max num pages: ${
-        pagenavAnchorsSpansText[pagenavAnchorsSpansText.length - 1]
-      }`
-    );
+    // console.log(
+    //   `Max num pages: ${
+    //     pagenavAnchorsSpansText[pagenavAnchorsSpansText.length - 1]
+    //   }`
+    // );
     //TODO: might want to handle case if something goes wrong fetching the max number of pages
     // Parse the last pagination element as a number so it can be later used to select a random page
     const maxNumPages = parseInt(
@@ -110,7 +110,6 @@ export async function GetSomeBitches(
   // remove the first and last podBodies because they contain pagination and not anything post related
   podbodies.shift();
   podbodies.pop();
-  console.log(podbodies);
 
   const randomPodInd = Math.floor(Math.random() * podbodies.length);
 
@@ -133,7 +132,6 @@ export async function GetSomeBitches(
   } catch (e) {
     // await browser.close();
     console.error(e);
-    console.log("uh");
 
     // ! throw error on fallback
     // throw new Error(timeoutErrResponse);
