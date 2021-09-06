@@ -22,7 +22,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev src/index.ts",
-    "start": "ts-node out/index.js",
+    "start": "ts-node src/index.ts",
     "build": "tsc -p ."
   },
   "keywords": [],
