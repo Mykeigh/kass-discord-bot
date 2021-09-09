@@ -40,7 +40,7 @@ interface CustomClient extends Client {
   const token = process.env.TOKEN;
   // Create a new client instance
   const client = new Client({
-    intents: [Intents.FLAGS.GUILDS],
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
   }) as CustomClient;
 
   // When the client is ready, run this code (only once)
