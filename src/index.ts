@@ -1,4 +1,4 @@
-// Require the necessary discord.js classes
+// Require the necessary discord.js functions
 import fs from "fs";
 import {
   Client,
